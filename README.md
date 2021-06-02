@@ -5,10 +5,13 @@
 ## Introduction
 
 This example demonstrates how to deploy and interact with ERC20 contract using Optimistic Rollup, including the following operations:
-
 - **Deposit** ERC20 from L1 to L2
 - **Transfer** ERC20 in L2
 - **Withdraw** ERC20 from L2 to L1
+
+Here are two other great examples:
+- [optimism-tutorial](https://github.com/ethereum-optimism/optimism-tutorial)
+- [l1-l2-deposit-withdrawal](https://github.com/ethereum-optimism/l1-l2-deposit-withdrawal)
 
 ## Prerequisite Software
 
