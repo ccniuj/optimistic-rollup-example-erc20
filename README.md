@@ -22,7 +22,7 @@ This example demonstrates how to deploy and interact with ERC20 contract using O
 Everything we need to build and run Optimistic Rollup is in [Optimistic Ethereum](https://github.com/ethereum-optimism/optimism/tree/develop/ops):
 
 ```bash
-$ git clone https://github.com/ccniuj/optimistic-rollup-example-erc20.git
+$ git clone https://github.com/ethereum-optimism/optimism.git
 $ cd optimism
 $ yarn
 $ yarn build
@@ -61,14 +61,14 @@ $ yarn test:integration
 
 Make sure all the tests related to `L1 <--> L2 Communication` passed before you continue.
 
-> It might take a while (~ 120s) for Optimistic Ethereum to be fully operatable. If you fail all the test, try again later or rebuild Optimistic Ethereum from the source again.
+> It might take a while (~ 120s) for Optimistic Ethereum to be fully operational. If you fail all the test, try again later or rebuild Optimistic Ethereum from the source again.
 
 ## Deploy ERC20 and Gateway Contracts
 
 Next, let's deploy the contract:
 
 ```bash
-$ git clone git@github.com:ethereum-optimism/optimistic-rollup-example-erc20.git
+$ git clone https://github.com/ccniuj/optimistic-rollup-example-erc20.git
 $ cd optimistic-rollup-example-erc20
 $ yarn install
 $ yarn compile
@@ -181,7 +181,7 @@ Call `deposit` at `OVM_L1ERC20Gateway` contract:
 
 ```
 
-Confirm if the deposit is succesful from Optimistic Ethereum (L2) console:
+Confirm if the deposit is successful from Optimistic Ethereum (L2) console:
 
 ```bash
 $ npx hardhat console --network optimism
@@ -229,7 +229,7 @@ Here are the current balances:
 | L2 | Deployer | 1000 |
 | L2 | User | 0 |
 
-Next, let's trnasfer some funds from Deployer to User:
+Next, let's transfer some funds from Deployer to User:
 
 ```javascript
 // In Hardhat Optimism Console
@@ -270,7 +270,7 @@ Next, let's withdraw the funds via account User. Call `withdraw` at `L2Deposited
 BigNumber { _hex: '0x00', _isBigNumber: true }
 ```
 
-Finally, let's confirm if the withdrawal is succesful on L1:
+Finally, let's confirm if the withdrawal is successful on L1:
 
 ```javascript
 // In Hardhat ETH Console
@@ -281,7 +281,7 @@ BigNumber { _hex: '0x03e8', _isBigNumber: true } // 1000
 BigNumber { _hex: '0x2328', _isBigNumber: true } // 9000
 ```
 
-> Since the `FRAUD_PROOF_WINDOW_SECONDS` is set to be `0` second, you don't need to wait too long before the fund is withdrawed back to L1.
+> Since the `FRAUD_PROOF_WINDOW_SECONDS` is set to be `0` second, you don't need to wait too long before the fund is withdrawn back to L1.
 
 After all the operations, here is the final balances:
 
