@@ -22,7 +22,7 @@ This example demonstrates how to deploy and interact with ERC20 contract using O
 Everything we need to build and run Optimistic Rollup is in [Optimism](https://github.com/ethereum-optimism/optimism/tree/develop/ops):
 
 ```bash
-$ git clone git@github.com:ethereum-optimism/optimism.git
+$ git clone https://github.com/ccniuj/optimistic-rollup-example-erc20.git
 $ cd optimism
 $ yarn
 $ yarn build
