@@ -17,9 +17,9 @@ This example demonstrates how to deploy and interact with ERC20 contract using O
 - [Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
 - [Docker](https://docs.docker.com/engine/install/)
 
-## Build and Run Optimism
+## Build and Run Optimistic Ethereum
 
-Everything we need to build and run Optimistic Rollup is in [Optimism](https://github.com/ethereum-optimism/optimism/tree/develop/ops):
+Everything we need to build and run Optimistic Rollup is in [Optimistic Ethereum](https://github.com/ethereum-optimism/optimism/tree/develop/ops):
 
 ```bash
 $ git clone https://github.com/ccniuj/optimistic-rollup-example-erc20.git
@@ -38,7 +38,7 @@ $ docker-compose up
 
 A few services will be up, including：
 - L1 Ethereum Node (EVM)
-- L2 Ethereum Node (OVM)
+- L2 Optimistic Ethereum Node (OVM)
 - Batch Submitter
 - Data Transport Layer
 - **Deployer**
@@ -49,9 +49,9 @@ A few services will be up, including：
 
 > Clean the docker volume when you need to restart the service. Ex: `docker-compose down -v`
 
-### Test Optimism
+### Test Optimistic Ethereum
 
-Before we continue, we need to make sure that the Optimism operates normally, Especially the relayer. Use integration test to check its functionality:
+Before we continue, we need to make sure that the Optimistic Ethereum operates normally, Especially the relayer. Use integration test to check its functionality:
 
 ```bash
 $ cd optimism/integration-tests
@@ -61,7 +61,7 @@ $ yarn test:integration
 
 Make sure all the tests related to `L1 <--> L2 Communication` passed before you continue.
 
-> It might take a while (~ 120s) for Optimism to be fully operatable. If you fail all the test, try again later or rebuild Optimism from the source again.
+> It might take a while (~ 120s) for Optimistic Ethereum to be fully operatable. If you fail all the test, try again later or rebuild Optimistic Ethereum from the source again.
 
 ## Deploy ERC20 and Gateway Contracts
 
@@ -181,7 +181,7 @@ Call `deposit` at `OVM_L1ERC20Gateway` contract:
 
 ```
 
-Confirm if the deposit is succesful from Optimism (L2) console:
+Confirm if the deposit is succesful from Optimistic Ethereum (L2) console:
 
 ```bash
 $ npx hardhat console --network optimism
@@ -209,7 +209,7 @@ Instantiate `L2DepositedERC20` contract. Its contract address is in the outputs 
 > let L2DepositedERC20 = new ethers.Contract("0x09635F643e140090A9A8Dcd712eD6285858ceBef", L2ERC20_abi)
 ```
 
-Confirm if the deposit is succesful:
+Confirm if the deposit is successful:
 
 ```javascript
 // In Hardhat Optimism Console
